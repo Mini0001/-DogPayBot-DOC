@@ -15,7 +15,7 @@
 
 
 ## **💼 接口地址**  
-`https://pay.obsdx.pw/?key=秘钥&money=1`
+`https://pay.obsdx.pw/api?key=秘钥&money=1`
 
 ---
 
@@ -31,7 +31,7 @@
 
 ## **⚙️ 请求接口说明**  
 - **每3秒请求一次接口**  
-  - 请求地址：`https://pay.obsdx.pw/?key=秘钥&money=金额`  
+  - 请求地址：`https://pay.obsdx.pw/api?key=秘钥&money=金额`  
 - **接口返回内容解析：**  
   - 如果返回 `{ "success": true, "message": "Successfully" }`，表示支付已成功。  
   - 如果返回 `{ "success": false, "message": "Payment failed" }`，表示支付未成功。
@@ -69,7 +69,7 @@
 ```javascript
 const interval = setInterval(async () => {
   try {
-    const response = await fetch('https://pay.obsdx.pw/?key=秘钥&money=1');
+    const response = await fetch('https://pay.obsdx.pw/api?key=秘钥&money=1');
     const data = await response.json();
     if (data.success) {
       console.log('支付成功!');
